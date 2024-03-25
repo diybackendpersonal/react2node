@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
 
-app.use(cors)
+app.use(cors())
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://shalom:YWV0VlJH7aERcKbO@cluster0.wbnky.mongodb.net/', {
