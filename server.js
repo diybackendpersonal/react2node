@@ -19,12 +19,11 @@ mongoose.connection.on('error', (err) => {
     console.error('Error connecting to MongoDB:', err.message);
 });
 
-// Create mongoose schemas and models
 const Product = mongoose.model('Product', {
     name: String,
     price: Number,
-    image: Number,
-    desc: Number,
+    image: String,
+    desc: String,
 
 
 });
