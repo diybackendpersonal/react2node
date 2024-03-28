@@ -90,6 +90,20 @@ app.post('/orders', async (req, res) => {
     }
 });
 
+app.delete('/orders/:orderId', async (req, res) => {
+    const orderId = req.params.orderId;
+
+    try {
+        const deletedOrder = await Order.findByIdAndDelete(orderId);
+        if (!deletedOrder) {
+            return res.status(404).json({ message: 'Order not found' });
+        }
+        res.json({ message: 'Order deleted successfully' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
