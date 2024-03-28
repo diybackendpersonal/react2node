@@ -76,7 +76,7 @@ app.get('/orders', async (req, res) => {
 
 app.post('/orders', async (req, res) => {
     const order = new Order({
-        product: req.body.productId,
+        product: req.body.product,
         quantity: req.body.quantity,
         info: req.body.info,
 
