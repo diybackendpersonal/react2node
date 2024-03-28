@@ -32,7 +32,7 @@ const Product = mongoose.model('Product', {
 });
 
 const Order = mongoose.model('Order', {
-    product: Object,
+    product: Array,
     quantity: Number,
     info: Object,
 
