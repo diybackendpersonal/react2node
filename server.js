@@ -32,10 +32,7 @@ const Product = mongoose.model('Product', {
 });
 
 const Order = mongoose.model('Order', {
-    product: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product',
-    },
+    product: Object,
     quantity: Number,
     info: Object,
 
